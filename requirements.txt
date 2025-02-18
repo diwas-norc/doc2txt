@@ -1,0 +1,4 @@
+Flask==3.0.0
+gunicorn
+docling --extra-index-url https://download.pytorch.org/whl/cpu
+markitdown

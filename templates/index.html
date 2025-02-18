@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document to Text Converter</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="doc-processor">
+        <header class="app-header">
+            <h1>Document to Text Converter</h1>
+        </header>
+
+        <div class="upload-section">
+            <div class="dropzone" id="dropzone">
+                <div class="dropzone-content">
+                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                    <p>Drag and drop your document here</p>
+                    <div class="upload-actions">
+                        <button class="upload-btn" id="uploadBtn">
+                            <i class="fas fa-folder-open"></i>
+                            Choose File
+                        </button>
+                        <input type="file" id="fileInput" hidden accept=".pdf,.doc,.docx,.rtf">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="processing-options">
+                <label class="mode-selector">
+                    <span>Processing Mode:</span>
+                    <select id="processingMode">
+                        <option value="fast">Fast Processing (Good)</option>
+                        <option value="accurate">Accurate Processing (Slow)</option>
+                    </select>
+                </label>
+                <button class="start-processing-btn" id="startProcessingBtn" style="display: none;">
+                    <i class="fas fa-play"></i>
+                    Start Processing
+                </button>
+            </div>
+        </div>
+
+        <div class="status-section" style="display: none;">
+            <div class="status-container">
+                <div class="status-info">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <span class="status-label">Status:</span>
+                    <span class="status-value processing" id="statusValue">Processing your document...</span>
+                </div>
+                <div class="request-id">
+                    <i class="fas fa-hashtag"></i>
+                    <span>Request ID:</span>
+                    <span id="requestId"></span>
+                </div>
+                <button class="cancel-btn" id="cancelBtn">
+                    <i class="fas fa-times"></i>
+                    Cancel Processing
+                </button>
+            </div>
+        </div>
+
+        <div class="results-section" style="display: none;">
+            <div class="results-container">
+                <div class="results-header">
+                    <h2><i class="fas fa-check-circle"></i> Processing Results</h2>
+                    <div class="action-buttons">
+                        <button class="copy-btn" id="copyBtn">
+                            <i class="fas fa-copy"></i>
+                            Copy Text
+                        </button>
+                        <button class="download-btn" id="downloadBtn">
+                            <i class="fas fa-download"></i>
+                            Download Text
+                        </button>
+                    </div>
+                </div>
+                <div class="results-content" id="resultsContent"></div>
+            </div>
+        </div>
+
+        <div class="error-section" style="display: none;">
+            <div class="error-container">
+                <i class="fas fa-exclamation-circle error-icon"></i>
+                <h2>Error Occurred</h2>
+                <p id="errorMessage"></p>
+                <button class="retry-btn" id="retryBtn">
+                    <i class="fas fa-redo"></i>
+                    Try Again
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/scripts/config.js"></script>
+    <script src="static/scripts/api.js"></script>
+    <script src="static/scripts/ui.js"></script>
+    <script src="static/scripts/main.js"></script>
+</body>
+</html>
