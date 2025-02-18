@@ -1,11 +1,11 @@
 import asyncio
 import logging
 
-from .models import ResponseStatus
-from .storage import TempStorageClient
-from .doclingwrapper import DoclingWrapper
-from .markitdownwrapper import MarkItDownWrapper
-from .processingmode import ProcessingMode
+from models import ResponseStatus
+from storage import TempStorageClient
+from doclingwrapper import DoclingWrapper
+from markitdownwrapper import MarkItDownWrapper
+from processingmode import ProcessingMode
 
 logger = logging.getLogger(__name__)
 

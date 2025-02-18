@@ -8,11 +8,11 @@ import threading
 from flask import (Flask, jsonify, redirect, render_template, request,
                    send_from_directory, url_for)
 
-from src.models import ResponseStatus, ApiResponse
-from src.storage import TempStorageClient
-from src.utils import is_valid_uuid
-from src.processingmode import ProcessingMode
-from src.document_processor import DocumentProcessor
+from models import ResponseStatus, ApiResponse
+from storage import TempStorageClient
+from utils import is_valid_uuid
+from processingmode import ProcessingMode
+from document_processor import DocumentProcessor
 
 app = Flask(__name__)
 
