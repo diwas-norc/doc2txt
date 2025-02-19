@@ -36,12 +36,18 @@ jobs:
 
       - name: Create deployment package
         run: |
-          zip release.zip ./* -r \
-          !.venv/ \
-          !.git/ \
-          !__pycache__/ \
-          !*.pyc \
-          !.env
+          mkdir -p deploy
+          cp -r * deploy/ 2>/dev/null || :
+          cd deploy
+          zip -r ../release.zip . \
+          -x "*.git*" \
+          -x "*.venv/*" \
+          -x "*__pycache__/*" \
+          -x "*.pyc" \
+          -x "*.env" \
+          -x "deploy/*"
+          cd ..
+          rm -rf deploy
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v4
