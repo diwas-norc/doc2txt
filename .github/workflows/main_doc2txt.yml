@@ -37,7 +37,7 @@ jobs:
       - name: Create deployment package
         run: |
           zip release.zip ./* -r \
-          !venv/ \
+          !.venv/ \
           !.git/ \
           !__pycache__/ \
           !*.pyc \
